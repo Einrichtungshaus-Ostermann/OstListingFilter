@@ -1,0 +1,126 @@
+/**
+ * Einrichtungshaus Ostermann GmbH & Co. KG - Listing Filter
+ *
+ * @package   OstListingFilter
+ *
+ * @author    Eike Brandt-Warneke <e.brandt-warneke@ostermann.de>
+ * @copyright 2018 Einrichtungshaus Ostermann GmbH & Co. KG
+ * @license   proprietary
+ */
+
+// edit the filter actions since we appended it after the facets
+.filter--actions {
+
+    // after the facets
+    margin-bottom: 0;
+    border: 0;
+
+    // hide it by default and activate it after changing a facet
+    display: none;
+}
+
+
+
+// get rid of is--active
+.action--filter-btn .filter--trigger.is--active {
+
+    // set default button
+    .btn;
+
+    // correct display
+    display: block !important;
+}
+
+
+
+// ...
+.filter--actions.filter--actions-top {
+    display: none !important;
+}
+
+
+
+// we always have to show the active-filter container since we moved the submit button after the facets
+@media screen and (min-width: @tabletViewportWidth) {
+
+    // default hidden so we can show it when its collapsed
+    .action--filter-options {
+        .filter--active-container {
+            display: none !important;
+        }
+    }
+
+    // show when collapsed
+    .action--filter-options.is--collapsed {
+        .filter--active-container {
+            display: block !important;
+        }
+    }
+}
+
+
+
+// show our sorting in an extra row at high resolution
+@media screen and (min-width: @desktopViewportWidth) {
+
+    // remove default sorting
+    .action--sort {
+        display: none;
+    }
+
+    // show our own sorting
+    .ost-listing-filter--sorting {
+        display: block;
+
+        .action--sort {
+            display: inherit;
+        }
+    }
+}
+
+
+
+// hide our sorting and show the default sorting in lower resolution
+@media screen and (max-width: @desktopViewportWidth) {
+
+    // show default sorting
+    .action--sort {
+        display: inherit;
+    }
+
+    // hide our own sorting
+    .ost-listing-filter--sorting {
+        display: none;
+    }
+}
+
+
+
+// hide all filter buttons in high resolution
+@media screen and (min-width: @desktopViewportWidth) {
+
+    // always hide the filter button
+    .action--filter-btn {
+        display: none;
+    }
+
+    // remove top padding from the listing action -only- for the facets
+    // we can use the .is--rounded class since this one is also used for the facet container and not for our sorting
+    .listing--actions.is--rounded {
+
+        // remove padding
+        padding-top: 0;
+
+        // remove the double border
+        .action--filter-options {
+            border: 0;
+        }
+    }
+}
+
+
+
+// hide the filter if it has the hidden flag for non-leaf categories
+div.listing--actions.ost-listing-filter--hide-filter {
+    display: none !important;
+}

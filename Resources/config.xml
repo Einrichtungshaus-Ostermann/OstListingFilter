@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../engine/Shopware/Components/Plugin/schema/config.xsd">
+    <elements>
+
+        <element type="button">
+            <name>defaultButton</name>
+            <label><![CDATA[<b>Allgemeine Einstellungen</b>]]></label>
+        </element>
+
+        <element type="boolean">
+            <name>status</name>
+            <label>Aktivieren</label>
+            <value>true</value>
+            <description>Soll das Plugin für diesen Shop aktiviert werden?</description>
+        </element>
+
+        <element type="boolean">
+            <name>disableParentCategories</name>
+            <label>Filter in Oberkategorien ausblenden</label>
+            <value>true</value>
+            <description>Soll der Filter automatisch in allen Oberkategorien ausgeblendet bzw. nur in Blättern angezeigt werden?</description>
+        </element>
+
+        <element type="button">
+            <name>searchButton</name>
+            <label><![CDATA[<b>Volltextsuche</b>]]></label>
+        </element>
+
+        <element type="boolean">
+            <name>searchStatus</name>
+            <label>Filter aktivieren</label>
+            <value>true</value>
+            <description>Soll der Volltextsuche Filter aktiviert werden?</description>
+        </element>
+
+        <element type="boolean">
+            <name>shopwareSearchStatus</name>
+            <label>Shopware standard Suche aktivieren</label>
+            <value>false</value>
+            <description>Soll die Shopware standard Suche für die Volltextsuche aktiviert werden?</description>
+        </element>
+
+    </elements>
+</config>
