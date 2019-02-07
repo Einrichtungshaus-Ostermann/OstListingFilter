@@ -16,5 +16,10 @@
             <tag name="shopware.event_listener" method="onPreDispatch" event="Enlight_Controller_Action_PreDispatch_Frontend_Listing" />
         </service>
 
+        <service id="ost_listing_filter.listeners.controllers.frontend.search.pre_dispatch" class="OstListingFilter\Listeners\Controllers\Frontend\Search">
+            <argument type="string">%ost_listing_filter.view_dir%</argument>
+            <tag name="shopware.event_listener" method="onPreDispatch" event="Enlight_Controller_Action_PreDispatch_Frontend_Search" />
+        </service>
+
     </services>
 </container>

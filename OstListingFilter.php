@@ -12,6 +12,9 @@
  * 1.0.1
  * - fixed plugin name
  *
+ * 1.0.2
+ * - fixed custom filter facets for search controller
+ *
  * @package   OstListingFilter
  *
  * @author    Eike Brandt-Warneke <e.brandt-warneke@ostermann.de>
