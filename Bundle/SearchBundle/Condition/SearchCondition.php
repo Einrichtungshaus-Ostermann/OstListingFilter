@@ -55,4 +55,15 @@ class SearchCondition implements ConditionInterface
         // return name
         return $this->value;
     }
+
+    /**
+     * ...
+     *
+     * @return string
+     */
+    public function getTerm()
+    {
+        // return name
+        return $this->value;
+    }
 }

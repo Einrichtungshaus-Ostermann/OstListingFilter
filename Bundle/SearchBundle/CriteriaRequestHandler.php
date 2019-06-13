@@ -51,7 +51,7 @@ class CriteriaRequestHandler implements CriteriaRequestHandlerInterface
         // are we filtering for pseudo price?
         if ($request->has('ostlf_search')) {
             // add the condition
-            $criteria->addCondition(
+            $criteria->addBaseCondition(
                 new SearchCondition($request->get('ostlf_search'))
             );
         }

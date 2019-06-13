@@ -2,6 +2,7 @@
 {* facet container *}
 <div class="filter-panel filter--value facet--{$facet->getFacetName()|escape:'htmlall'}"
      data-filter-type="value"
+     data-facet-name="{$facet->getFieldName()|escape:'htmlall'}"
      data-field-name="{$facet->getFieldName()|escape:'htmlall'}"
      style="width: 99%;">
 

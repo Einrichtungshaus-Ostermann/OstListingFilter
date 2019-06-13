@@ -15,6 +15,9 @@
  * 1.0.2
  * - fixed custom filter facets for search controller
  *
+ * 1.0.3
+ * - added elastic search support
+ *
  * @package   OstListingFilter
  *
  * @author    Eike Brandt-Warneke <e.brandt-warneke@ostermann.de>

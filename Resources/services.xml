@@ -5,20 +5,44 @@
     <services>
 
         <!-- configuration -->
-        <service id="ost_listing_filter.configuration" class="OstFoundation\Services\ConfigurationService">
+        <service id="ost_listing_filter.configuration"
+                 class="OstFoundation\Services\ConfigurationService">
             <factory service="ost_foundation.services.configuration_service" method="getConfig"/>
             <argument type="string">OstListingFilter</argument>
         </service>
 
         <!-- frontend controller listeners -->
-        <service id="ost_listing_filter.listeners.controllers.frontend.detail.pre_dispatch" class="OstListingFilter\Listeners\Controllers\Frontend\Listing">
+        <service id="ost_listing_filter.listeners.controllers.frontend.detail.pre_dispatch"
+                 class="OstListingFilter\Listeners\Controllers\Frontend\Listing">
             <argument type="string">%ost_listing_filter.view_dir%</argument>
             <tag name="shopware.event_listener" method="onPreDispatch" event="Enlight_Controller_Action_PreDispatch_Frontend_Listing" />
         </service>
 
-        <service id="ost_listing_filter.listeners.controllers.frontend.search.pre_dispatch" class="OstListingFilter\Listeners\Controllers\Frontend\Search">
+        <service id="ost_listing_filter.listeners.controllers.frontend.search.pre_dispatch"
+                 class="OstListingFilter\Listeners\Controllers\Frontend\Search">
             <argument type="string">%ost_listing_filter.view_dir%</argument>
             <tag name="shopware.event_listener" method="onPreDispatch" event="Enlight_Controller_Action_PreDispatch_Frontend_Search" />
+        </service>
+
+        <!-- add criteria_request_handler -->
+        <service id="ost_listing_filter_bundle_search.criteria_request_handler"
+                 class="OstListingFilter\Bundle\SearchBundle\CriteriaRequestHandler">
+            <tag name="criteria_request_handler"/>
+            <argument type="service" id="ost_listing_filter.configuration"/>
+        </service>
+
+        <!-- add shopware_search_es.search_handler -->
+        <service id="ost_listing_filter_bundle.search_bundle_es_facet_handler.search_facet_handler"
+                 class="OstListingFilter\Bundle\SearchBundleES\FacetHandler\SearchFacetHandler">
+            <tag name="shopware_search_es.search_handler"/>
+            <argument type="service" id="shopware_search_es.search_term_query_builder"/>
+            <argument type="service" id="snippets"/>
+        </service>
+
+        <service id="ost_listing_filter_bundle.search_bundle_es_condition_handler.search_condition_handler"
+                 class="OstListingFilter\Bundle\SearchBundleES\ConditionHandler\SearchConditionHandler">
+            <tag name="shopware_search_es.search_handler"/>
+            <argument type="service" id="shopware_search_es.search_term_query_builder"/>
         </service>
 
     </services>
