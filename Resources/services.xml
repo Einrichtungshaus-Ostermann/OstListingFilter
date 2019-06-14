@@ -11,7 +11,7 @@
             <argument type="string">OstListingFilter</argument>
         </service>
 
-        <!-- frontend controller listeners -->
+        <!-- frontend and widget controller listeners -->
         <service id="ost_listing_filter.listeners.controllers.frontend.detail.pre_dispatch"
                  class="OstListingFilter\Listeners\Controllers\Frontend\Listing">
             <argument type="string">%ost_listing_filter.view_dir%</argument>
@@ -22,6 +22,11 @@
                  class="OstListingFilter\Listeners\Controllers\Frontend\Search">
             <argument type="string">%ost_listing_filter.view_dir%</argument>
             <tag name="shopware.event_listener" method="onPreDispatch" event="Enlight_Controller_Action_PreDispatch_Frontend_Search" />
+        </service>
+
+        <service id="ost_listing_filter.listeners.controllers.widgets.listing.pre_dispatch"
+                 class="OstListingFilter\Listeners\Controllers\Widgets\Listing">
+            <tag name="shopware.event_listener" method="onPreDispatch" event="Enlight_Controller_Action_PreDispatch_Widgets_Listing" />
         </service>
 
         <!-- add criteria_request_handler -->

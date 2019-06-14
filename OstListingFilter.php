@@ -18,6 +18,10 @@
  * 1.0.3
  * - added elastic search support
  *
+ * 1.0.4
+ * - always load facets when using the filter
+ * - remove is-disabled flag from search facet
+ *
  * @package   OstListingFilter
  *
  * @author    Eike Brandt-Warneke <e.brandt-warneke@ostermann.de>
