@@ -61,7 +61,7 @@
 
 
 // show our sorting in an extra row at high resolution
-@media screen and (min-width: @desktopViewportWidth) {
+@media screen and (min-width: @tabletLandscapeViewportWidth) {
 
     // remove default sorting
     .action--sort {
@@ -81,7 +81,7 @@
 
 
 // hide our sorting and show the default sorting in lower resolution
-@media screen and (max-width: @desktopViewportWidth) {
+@media screen and (max-width: @tabletLandscapeViewportWidth) {
 
     // show default sorting
     .action--sort {
@@ -96,8 +96,24 @@
 
 
 
+
+
+// fix max-width for exactly that 1024px width
+@media screen and (width: @tabletLandscapeViewportWidth) {
+    .action--sort {
+        display: none;
+    }
+    .ost-listing-filter--sorting {
+        display: block;
+    }
+}
+
+
+
+
+
 // hide all filter buttons in high resolution
-@media screen and (min-width: @desktopViewportWidth) {
+@media screen and (min-width: @tabletLandscapeViewportWidth) {
 
     // always hide the filter button
     .action--filter-btn {

@@ -17,7 +17,7 @@
         init: function ()
         {
             // open the filter at high resolution
-            if ( StateManager.isCurrentState( [ "xl" ] ) ) {
+            if ( StateManager.isCurrentState( [ "xl", "l" ] ) ) {
                 // show the facet and active filter container
                 $( '*[data-listing-actions="true"] form#filter div.filter--facet-container').show();
                 $( '*[data-listing-actions="true"] form#filter div.filter--active-container').attr( "style", "display: block !important;" );

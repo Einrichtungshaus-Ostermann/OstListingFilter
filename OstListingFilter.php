@@ -22,6 +22,9 @@
  * - always load facets when using the filter
  * - remove is-disabled flag from search facet
  *
+ * 1.0.5
+ * - added default listing filter for tablet landscape viewport
+ *
  * @package   OstListingFilter
  *
  * @author    Eike Brandt-Warneke <e.brandt-warneke@ostermann.de>
